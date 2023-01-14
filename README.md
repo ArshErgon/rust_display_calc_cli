@@ -30,7 +30,7 @@ Final Answer: 9
 ```
 
 # to Run it on Windows or Linux without installing rust
-> goto the exe folder, download the exe file for your OS and follow these steps
+> goto the [exe folder](https://github.com/ArshErgon/rust_display_calc_cli/blob/5fd0f0b6511d23a69811dd7895bbe6c3b77b3d17/exe)  download the exe file for your OS and follow these steps, make sure you do spaces properly.
 
 ```git 
 
