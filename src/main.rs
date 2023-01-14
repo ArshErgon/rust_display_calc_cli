@@ -32,7 +32,7 @@ fn reverse_polish_notation(number_vector: Vec<&str>) {
                         let running_sum = (num_two + num_one).to_string();
                         steps += 1;
                         let msg = format!(
-                            "Step: {steps} -> {num_one} {elements} {num_two} = {running_sum}"
+                            "Step: {steps} -> {num_two} {elements} {num_one} = {running_sum}"
                         );
                         stack.push(running_sum);
                         println!("{msg}");
@@ -42,7 +42,7 @@ fn reverse_polish_notation(number_vector: Vec<&str>) {
                         let running_sum = (num_two - num_one).to_string();
                         steps += 1;
                         let msg = format!(
-                            "Step: {steps} -> {num_one} {elements} {num_two} = {running_sum}"
+                            "Step: {steps} -> {num_two} {elements} {num_one} = {running_sum}"
                         );
                         stack.push(running_sum);
                         println!("{msg}");
@@ -52,7 +52,7 @@ fn reverse_polish_notation(number_vector: Vec<&str>) {
                         let running_sum = (num_two * num_one).to_string();
                         steps += 1;
                         let msg = format!(
-                            "Step: {steps} -> {num_one} {elements} {num_two} = {running_sum}"
+                            "Step: {steps} -> {num_two} {elements} {num_one} = {running_sum}"
                         );
                         stack.push(running_sum);
                         println!("{msg}");
@@ -66,7 +66,7 @@ fn reverse_polish_notation(number_vector: Vec<&str>) {
                             let running_sum = (num_one / num_two).to_string();
                             steps += 1;
                             let msg = format!(
-                                "Step: {steps} -> {num_one} {elements} {num_two} = {running_sum}"
+                                "Step: {steps} -> {num_two} {elements} {num_one} = {running_sum}"
                             );
                             stack.push(running_sum);
                             println!("{msg}");
