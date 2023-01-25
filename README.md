@@ -1,3 +1,11 @@
+# Calculator Cli
+A cli calculator which uses shunting algorithm and reverse polish notation to do the required arthematic operations.
+
+It first take the equation in a string format, remove all the white spaces and send the string into the shunting algorithm function which convert it to a polish notation, after that it send it to the reverse polish notation function to do simple arthematic operations with the help of stack.
+
+[calculator_cli_ss.webm](https://user-images.githubusercontent.com/40994679/214606308-a70614ac-3a7e-4c7e-899d-003ef1b3cbd2.webm)
+
+
 # Run Locally
 ```git
 $ cargo run "1 + 1 + 1" 
@@ -7,45 +15,61 @@ give a proper space between operators and integers or else it will failed
 
 ## Examples
 ```git
-$ cargo run 1 + 1 + 1
-Numerical: 1 + 1 + 1 
-Shunting Algorithm: 1 1 1 + +
+$ cargo run "( 8 - 3 ) * 5"
+    ______      __           __      __            
+    / ____/___ _/ /______  __/ /___ _/ /_____  _____
+   / /   / __ `/ / ___/ / / / / __ `/ __/ __ \/ ___/
+  / /___/ /_/ / / /__/ /_/ / / /_/ / /_/ /_/ / /    
+  \____/\__,_/_/\___/\__,_/_/\__,_/\__/\____/_/     
+                                                   
+    A calculator which follows BODMAS rule.
+    
+
+ Numerical: ( 8 - 3 ) * 5 
+ Shunting Algorithm: 8 3 - 5 *
+
 	Way to solve
-Step: 1 -> 1 + 1 = 2
-Step: 2 -> 2 + 1 = 3
+
+Step: 1 -> Perform substraction 
+ 8 - 3 = 5
+
+Step: 2 -> Perform multiplication 
+ 5 * 5 = 25
+
+Final Answer: 25
+
+
+
+$ cargo run "1 + 1 + 1"
+
+    ______      __           __      __            
+    / ____/___ _/ /______  __/ /___ _/ /_____  _____
+   / /   / __ `/ / ___/ / / / / __ `/ __/ __ \/ ___/
+  / /___/ /_/ / / /__/ /_/ / / /_/ / /_/ /_/ / /    
+  \____/\__,_/_/\___/\__,_/_/\__,_/\__/\____/_/     
+                                                   
+    A calculator which follows BODMAS rule.
+    
+
+ Numerical: 1 + 1 + 1 
+ Shunting Algorithm: 1 1 1 + +
+
+	Way to solve
+
+Step: 1 -> Perform addition 
+ 1 + 1 = 2
+
+Step: 2 -> Perform addition 
+ 1 + 2 = 3
+
 Final Answer: 3
 
 
-$ cargo run "2 * ( 3 + 4 ) - 5"
-    Finished dev [unoptimized + debuginfo] target(s) in 0.00s
-     Running `target/debug/cli_display_cal '2 * ( 3 + 4 ) - 5'`
-Numerical: 2 * ( 3 + 4 ) - 5 
-Shunting Algorithm: 2 3 4 + * 5 -
-	Way to solve
-Step: 1 -> 4 + 3 = 7
-Step: 2 -> 7 * 2 = 14
-Step: 3 -> 5 - 14 = 9
-Final Answer: 9
-
 ```
 
-# to Run it on Windows or Linux without installing rust
-> goto the [exe folder](https://github.com/ArshErgon/rust_display_calc_cli/blob/5fd0f0b6511d23a69811dd7895bbe6c3b77b3d17/exe)  download the exe file for your OS and follow these steps, make sure you do spaces properly.
-
-```git 
-
-for linux
-$ ./cli_display_cal "1 + 1 + 1"
-
-for windows
-$ ./cli_display_cal "1 + 1 + 1"  # or .\cli_display_cal.exe "1 + 1 + 1"      on Windows
-
-
+# Dockerfile
+```git
+$ docker build -t myapp .
+$ docker run -p 8000:8000 myapp
 ```
 
-make sure to change the expersion
-
-
-
-### its still under process
-> will be improving it more and will create a docker file for it also.
